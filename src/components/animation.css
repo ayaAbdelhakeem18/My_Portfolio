@@ -1,0 +1,103 @@
+.main-heading{
+  font-size: 150px;
+  font-family: var(--sec-font);
+  color: white;
+  text-transform: uppercase;
+}
+.anim-footer{
+  font-size: 112px;
+  font-family: var(--sec-font);
+  color: white;
+  text-transform: uppercase;
+}
+.scrolling-text-container {
+    overflow-x: hidden;
+    width: 100%;    
+    margin-bottom:50px ;
+    margin-top:5rem ;
+  }
+  .scrolling-text {
+    white-space: nowrap;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-animation: marquee 30s linear infinite;
+            animation: marquee 30s linear infinite;
+  }
+  .scrolling-text span{
+  font-size: 70px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  }
+  @media(max-width: 1000px){
+    .main-heading{
+        font-size:7.428571428571429rem;
+    }
+    h1 span{
+      padding: 0;
+    }
+    .anim-footer{
+      font-size: 80px;
+    }
+    .footer-title{
+      margin-bottom: 15px;
+    }
+    }
+  @media(max-width: 776px){
+    .main-heading{
+        font-size:4.142857rem;
+        font-weight: 400;
+        padding-bottom: 0.2857142857142857rem;
+        letter-spacing: 1px;
+    }
+    .scrolling-text span{
+      font-size: 1.1428571428571428rem;
+      padding-right: 7px;
+      padding-left: 7px;
+    }
+    h1 span{
+      padding: 0;
+    }
+    .anim-footer{
+      font-size: 80px;
+    }
+    .footer-title{
+      margin-bottom: 15px;
+    }
+    .scrolling-text-container{
+      overflow-x: hidden;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 2rem;
+    }
+    }
+  @media(max-width: 500px){
+    .main-heading{
+        font-size:3.142857rem;
+    }
+    }
+  h2 span{
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+  @-webkit-keyframes marquee {
+    0% {
+      -webkit-transform: translateX(0%);
+              transform: translateX(0%);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+  }
+  @keyframes marquee {
+    0% {
+      -webkit-transform: translateX(0%);
+              transform: translateX(0%);
+    }
+    100% {
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+    }
+  }
