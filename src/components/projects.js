@@ -1,26 +1,47 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import content from '../assets/content/content';
+
 
 const Projects = (props) => {
+const pRef = useRef(null);
+const svgRef = useRef(null);
+const [show,setshow]=useState(false);
 
-const projects=["Example Project","Example Project","Example Project"];
+const showFunction=(e)=>{
+if(show==false){
+  //we open it
+  pRef.current.textContent = 'Show Less';
+  svgRef.current.style.transform = 'rotate(180deg)';
+  setshow(!show);
+}else{
+  //we close it
+  pRef.current.textContent = 'Show More';
+  svgRef.current.style.transform = '';
+  setshow(!show);
+}
+window.scrollTo({
+  top: document.getElementById('projects').offsetTop,
+  behavior: 'smooth',
+});
 
-
+}
 return(
 <>
-   {projects.map((elle,i)=>{
+   {content.projects.map((elle,i,arr)=>{
     return(
-      <div id="work" className={props.mobile==true?props.display:"container-fluid "} key={i}>
+      <div id="work" className={props.mobile==true?props.display:`container-fluid ${show==false&&i>2?'d-none':''}`} style={show==false&&i==2||arr[i+1]==undefined?{marginBottom:'50px'}:{}} key={i}>
       <div className="project-info">
-      <Link to={"/_project"}><h2>{elle}</h2></Link>
-      {/* <span>sample</span> */}
+      <Link to={elle.rout}><h2>{elle.title}</h2></Link>
+      <span className='type-span-bigScreen type'>{elle.type}</span>
       <svg fill="none" height="28" viewBox="0 0 36 29" width="36" xmlns="http://www.w3.org/2000/svg"><path clipRule="evenodd" d="M0.682617 13.542L0.682617 15.233L31.9476 15.233C31.658 15.3319 31.3713 15.4405 31.0881 15.5588C29.4139 16.2585 27.8926 17.284 26.6112 18.5768C25.3298 19.8695 24.3133 21.4043 23.6198 23.0934C22.9263 24.7825 22.5693 26.5929 22.5693 28.4211L24.3078 28.4211C24.3078 26.8232 24.6198 25.2409 25.2259 23.7646C25.832 22.2883 26.7205 20.9469 27.8405 19.8169C28.9605 18.687 30.2901 17.7907 31.7534 17.1792C33.2168 16.5677 34.7852 16.2529 36.3691 16.2529L36.3691 14.4998L36.3691 14.4991L36.3691 12.746C34.7852 12.746 33.2168 12.4312 31.7534 11.8197C30.2901 11.2082 28.9605 10.3119 27.8405 9.18198C26.7205 8.05206 25.832 6.71064 25.2259 5.23433C24.6198 3.75802 24.3078 2.17572 24.3078 0.577767L22.5693 0.577767C22.5693 2.40604 22.9263 4.21641 23.6198 5.90551C24.3133 7.59461 25.3298 9.12937 26.6112 10.4222C27.8926 11.7149 29.4139 12.7404 31.0881 13.4401C31.1715 13.4749 31.2551 13.5089 31.3389 13.542L0.682617 13.542ZM36.2266 14.4991L36.2266 14.4998C36.2403 14.4997 36.254 14.4996 36.2677 14.4995C36.254 14.4994 36.2403 14.4992 36.2266 14.4991Z" fill="currentColor" fillRule="evenodd"></path></svg>
     </div>
+    <span className='type-span-mobile type'>{elle.type}</span>
    </div> 
     )
    })
     }
-
+{props.mobile==true?'':<div className='show text-center' onClick={(e)=>showFunction(e)}><p  ref={pRef} >Show More</p><svg ref={svgRef} fill="none" focusable="false" height="28" role="img" stroke-width="1" viewBox="0 0 24 24" width="28" class="c-dlXnHC"><path d="M17.4697 8.46973L12.0001 13.9394L6.53039 8.46973L5.46973 9.53039L12.0001 16.0607L18.5304 9.53039L17.4697 8.46973Z" fill="currentColor"></path></svg></div>}
 </>  
 )
 };

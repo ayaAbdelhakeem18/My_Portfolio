@@ -5,7 +5,7 @@ import { useNavigate ,Link,useLocation} from 'react-router-dom';
 function Footer(props) {
   const changeLocation=useNavigate();
   const location = useLocation();
-  const isServicePage = location.pathname === '/_service';
+  const isServicePage =location.pathname.includes('/_service');
   const isErrorPage = location.pathname !== '/' && !location.pathname.startsWith('/_');
   
   const links = [

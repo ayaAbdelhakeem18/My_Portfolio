@@ -3,8 +3,8 @@ import AnimationTitle from './animationTitle';
 import Projects from './projects';
 import Recommendation from './recommendation';
 import Services from './services';
-import img from "../assets/images/syf86lcskg1dp1ynwdwf.webp";
 import MobileNav from './mobile-nav';
+import content from '../assets/content/content';
 
 
 function Home(props) {
@@ -25,13 +25,13 @@ function Home(props) {
 
   return (
     <>
-      <div className='img profile-img'><img src={img} alt='' className='img-fluid'></img></div>
+      <div className='img profile-img'><img src={content.img1} alt='profile-img' className='img-fluid'></img></div>
       <AnimationTitle type="head" />
 
       <div id="home" className='container-fluid text-center'>
         <div className="info">
-          <div className="title sm-none-display">FRONTEND Developer</div>
-          <p className="summary">Pro frontend dev for ecommerce & portfolios</p>
+          <div className="title sm-none-display">FullStack Developer</div>
+          <p className="summary">{content.descriptiveTitle}</p>
 
           <div className='call-to-action action-top home-action'>
             <div> <button className='main-button'  onClick={()=>{props.toggleForm(); window.scrollTo({top: 0, behavior: 'smooth' })} } >Work With me</button></div>
@@ -45,7 +45,7 @@ function Home(props) {
           <MobileNav />
 
           <p className="sm-none-display description">
-            Experienced Frontend Engineer skilled in managing React JS applications and providing high-quality web development services, including eCommerce projects, portfolios, and landing pages. I can solve complex problems and deliver all client requirements efficiently.
+           {content.about}
           </p>
           <div className='sm-none-display'>
             <div className="more-info d-flex justify-content-between align-items-center ">

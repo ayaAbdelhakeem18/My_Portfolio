@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
-import img from "../assets/images/syf86lcskg1dp1ynwdwf.webp";
 import { Link } from 'react-scroll';
-import { Form, useNavigate} from 'react-router-dom';
+import { useLocation, useNavigate} from 'react-router-dom';
+import content from '../assets/content/content';
 
 function Project(props) {
-    const changeLocation=useNavigate();
+  const changeLocation=useNavigate();
+  const location = useLocation();
 
-   useEffect(()=>window.scrollTo({top: 0, behavior: 'smooth' }),[])
+  useEffect(()=>window.scrollTo({top: 0, behavior: 'smooth' }),[])
 
   return (
     <div className='project'>
@@ -18,24 +19,24 @@ function Project(props) {
         <span>BACK TO PROJECTS</span>
       </div>
       </a>
-      <h2>Landing page</h2>
+      <h2>{props.title}</h2>
       <div className='tools'>
-        <p><span>Tools : </span><small>ANIMATE.CSS • CSS3 • HTML5</small></p>
+        <p><span>Tools : </span>{props.tools.map((e,i)=><small key={i}>• {e}</small>)}</p>
       </div>
       <div className='d-flex align-items-center '>
-      <div className='img'><img src={img} alt='' className='img-fluid'></img></div>
+      <div className='img'><img src={content.img2} alt='' className='img-fluid'></img></div>
       <p className='name'>Aya Abdelhakeem</p>
       </div>
       <div className='box'>
       <ul>
-        <li>Developed a high-performance single-page application using React, resulting in enhanced user experience and improved site performance.</li>
-        <li>Established seamless data exchange between the front-end and back-end through effective utilization of the Axios library.</li>
-        <li>Implemented robust e-commerce functionality, ensuring a smooth and intuitive shopping experience for users.</li>
-        <li>Utilized Bootstrap to create visually appealing and responsive user interfaces, enhancing the site's aesthetics and usability.</li>
+      {props.description.map((e,i)=><li key={i}>{e}</li>)}
       </ul>
+      {location.pathname==="/_project_adminDashboard"?<p>*** you can test the application using this account:email: 'user@gmail.com' , password: 'user223_223'</p>:""}
+      {location.pathname==="/_project_phpDashboard"?<p>*** you can test the application using this account:email: 'user@gmail.com' , password: 'user223_223'</p>:""}
+      
       <div className='buttons'>
-        <button className='main-button frstbtn' style={{color:"white"}}>Github Repo</button>
-        <button className='main-button' style={{backgroundColor:"white"}}>Live Demo ✦︎︎</button>
+       <a target='_blank' href={props.codeLink}> <button className='main-button frstbtn' style={{color:"white"}}>Github Repo</button></a>
+       <a target='_blank' href={props.liveLink}> <button className='main-button' style={{backgroundColor:"white"}}>Live Demo ✦︎︎</button></a>
       </div>
       </div>
      <div className='btn'> <button className='main-button  bottombtn'  onClick={()=>{props.toggleForm(); window.scrollTo({top: 0, behavior: 'smooth' })} }> Work with me</button></div>
