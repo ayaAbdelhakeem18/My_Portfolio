@@ -90,6 +90,7 @@ ul{
 }
 .app {
   width: 100%;
+  max-width: 100%;
   position: relative;
   min-height: 100vh;
 }
@@ -1049,6 +1050,9 @@ margin-top: 50px;
 nav ul{
   visibility: hidden;
 }
+.bg-transparent ul{
+  display: none !important;
+}
 .profile-img{
     display: block;
     width: 25%;
@@ -1058,7 +1062,35 @@ nav ul{
     margin-right: auto;
 }
 #work{
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+}
+.p-cont #work:nth-child(1){
+  margin-top: 50px;
+}
+.mobile-service{
+  margin-top: 60px;
+}
+.mobile-service .small-h{
+  text-transform: none;
+}
+.mobile-service .main-button{
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 11px 0.714286rem;
+  font-family: var(--main-font);
+  border-radius: 40px;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: normal;
+}
+.p-cont .mobile-service:nth-last-child(1){
+  margin-bottom: 50px;
+}
+.p-cont .mobile-service:nth-child(1){
+  margin-top: 40px;
+}
+#work .type{
+  display: none;
 }
 .project-info h2{
   font-size: 2rem;

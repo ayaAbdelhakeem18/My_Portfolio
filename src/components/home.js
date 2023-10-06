@@ -25,7 +25,7 @@ function Home(props) {
 
   return (
     <>
-      <div className='img profile-img'><img src={content.img1} alt='profile-img' className='img-fluid'></img></div>
+      <div className='img profile-img'><img src={content.img1} width='150px' alt='profile-img' className='img-fluid'></img></div>
       <AnimationTitle type="head" />
 
       <div id="home" className='container-fluid text-center'>

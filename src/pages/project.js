@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-scroll';
 import { useLocation, useNavigate} from 'react-router-dom';
 import content from '../assets/content/content';
 

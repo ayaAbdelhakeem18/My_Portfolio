@@ -81,7 +81,8 @@ function MobileNav() {
               <span>{e.label}</span>
               <svg fill="none" focusable="false" height="28" role="img" strokeWidth="1" viewBox="0 0 24 24" width="28" className={rotated[i]==true?"svg_rotation c-dlXnHC":"c-dlXnHC"}><path d="M17.4697 8.46973L12.0001 13.9394L6.53039 8.46973L5.46973 9.53039L12.0001 16.0607L18.5304 9.53039L17.4697 8.46973Z" fill="currentColor"></path></svg>
              </h3>
-          {e.component}
+
+          <div className='p-cont'>{e.component}</div>
           </div>
         );
       })}

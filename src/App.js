@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import HomePage from './pages/homePage';
 import MyForm from './pages/form';

@@ -1,6 +1,6 @@
 import projects from "./projects";
 import {services} from "./services";
-import img from "../images/photo.jpg";
+import img from "../images/photo.webp";
 
 const content={
     img1:img,
