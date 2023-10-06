@@ -10,7 +10,7 @@ import Loading from './loading';
 import content from '../assets/content/content';
 
 function HomePage(props) {
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(false);
   
 
   // window.onload = function () {
