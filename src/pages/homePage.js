@@ -13,10 +13,10 @@ function HomePage(props) {
   const [isLoading, setLoading] = useState(true);
   
 
-  window.onload = function () {
-    setLoading(false);
-    console.log(isLoading)
-  };
+  // window.onload = function () {
+  //   setLoading(false);
+  //   console.log(isLoading)
+  // };
 
   return (
     <BrowserRouter>    
