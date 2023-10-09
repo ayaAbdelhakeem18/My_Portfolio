@@ -16,7 +16,7 @@ function MyForm(props) {
         formData.append('message', message);
 
         try {
-            const response = await fetch('http://localhost/portfolio/index.php', {
+            const response = await fetch('/api/index.php', {
                 method: 'POST',
                 body: formData,
             });

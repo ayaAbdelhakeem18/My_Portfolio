@@ -32,7 +32,7 @@ function HomePage(props) {
       <Route key={i} path={elle.rout} element={<Project toggleForm={props.toggleForm} title={elle.title} type={elle.type} liveLink={elle.liveLink} codeLink={elle.codeLink} description={elle.description} tools={elle.tools}/>}></Route>
       )} 
       {content.services.map((elle,i)=>
-      <Route key={i} path={elle.route} element={<ServicePage toggleForm={props.toggleForm} title={elle.title} about={elle.about} included={elle.included} skills={elle.skills} tools={elle.tools} projects={elle.exampleProjects}/>}/>
+      <Route key={i} path={elle.route} element={<ServicePage toggleForm={props.toggleForm} title={elle.title} about={elle.about} included={elle.included} skills={elle.skills} tools={elle.tools} projects={elle.exampleProjects} otherServices={elle.relatedServices}/>}/>
       )}
 
       </Routes> 

@@ -16,7 +16,12 @@ export const services=[
         {title:"User Authentication (Optional)",desc:"If desired, I can add user authentication features to your application, enabling secure registration and login."}, 
     ],
     exampleProjects:[{name:'E-commerce',link:'/_project_ecommerce'}],
-    route:'_service_ecommerce'
+    route:'/_service_ecommerce',
+    relatedServices:[
+    {name:"Authentication System",link:"/_service_auth"},
+    {name:"Admin Dasboard",link:"/_service_dashboard"},
+    {name:"Frontend Development",link:"/_service_frontendDevelopment"}
+],
 },
 {
     title:'Authentication System',
@@ -34,7 +39,9 @@ export const services=[
         {title:"Authentication Security",desc:" Implementing industry-standard security measures to safeguard user data and prevent unauthorized access."}, 
     ],
     exampleProjects:[{name:'Admin-dashboard with apis endpoints',link:'/_project_adminDashboard'}],
-    route:'_service_auth'
+    route:'/_service_auth',
+    relatedServices:[{name:"Admin Dasboard",link:"/_service_dashboard"},    {name:"Frontend Development",link:"/_service_frontendDevelopment"},
+    ,{name:"Responsive web Design",link:"/_service_responsiveDesign"}],
 },
 {
     title:'Admin Dasboard',
@@ -51,7 +58,8 @@ export const services=[
         {title:"Maintenance and Support",desc:"Provide ongoing maintenance, updates, and technical support to ensure the continued smooth operation of your admin dashboard and database."},
     ],
     exampleProjects:[{name:'Admin-dashboard',link:'/_project_adminDashboard'}],
-    route:'_service_dashboard'
+    route:'/_service_dashboard',
+    relatedServices:[{name:"Authentication System",link:"/_service_auth"},{name:"Frontend Development",link:"/_service_frontendDevelopment"},{name:"Responsive web Design",link:"/_service_responsiveDesign"}],
 },
 {
     title:'Responsive web Design',
@@ -66,7 +74,11 @@ export const services=[
         {title:"Different design implementation (Optional)",desc:"if desired I can implement different designs for different screen sizes, so that your website looks and functions its best on all devices. This may involve using different fonts, images, and layouts for different screen sizes."},
     ],
     exampleProjects:[{name:'Skin Care store',link:'/_project_ecommerce'},{name:'My Portfolio', link:'/'}],
-    route:'_service_responsiveDesign'
+    route:'/_service_responsiveDesign',
+    relatedServices:[
+        {name:"Authentication System",link:"/_service_auth"},
+        {name:"Frontend Development",link:"/_service_frontendDevelopment"},
+        {name:"Ecommerce App",link:"/_service_ecommerce"},],
 },
 {
     title:'Frontend Development',
@@ -86,6 +98,9 @@ export const services=[
         {title:"Cross-Browser Compatibility",desc:" I ensure that your web application's design and functionality work consistently across different web browsers, including Chrome, Firefox, Safari, and Edge."},
     ],
     exampleProjects:[{name:'Artist Portfolio',link:'/_project_artistPortfolio'},{name:'Bank Landing page',link:'/_project_landingPage'},{name:'Skin Care Store',link:'/_project_ecommerce'}],
-    route:'_service_frontendDevelopment'
+    route:'/_service_frontendDevelopment',
+    relatedServices:[    {name:"Ecommerce App",link:"/_service_ecommerce"},
+    ,{name:"Authentication System",link:"/_service_auth"},
+    ,{name:"Frontend Development",link:"/_service_frontendDevelopment"}],
 },
 ];

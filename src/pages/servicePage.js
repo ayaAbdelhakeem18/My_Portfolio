@@ -66,14 +66,10 @@ function ServicePage(props) {
 </div>
 <div className='more'> 
 <p className='p-title'>MORE SERVICES</p>
-{content.services.map((e,i)=>{
-let num=0;  
-if(e.title!=props.title){
-  num=num+1
+{props.otherServices.map((e,i)=>{
 return(
-  num>=3?'':<Link to={e.route} key={i}><div className='serv-prev'>{e.title}</div></Link>
+<Link to={e.link} key={i}  onClick={()=>{window.scrollTo({top: 0, behavior: 'smooth' })} }><div className='serv-prev'>{e.name}</div></Link>
 )
-}
 })}
 
 </div>
